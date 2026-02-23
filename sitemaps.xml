@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://portfolio2-2026.netlify.app//</loc>
+    <loc>https://junior-richard.netlify.app/</loc>
     <lastmod>2026-02-23</lastmod>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://portfolio2-2026.netlify.app//#about</loc>
+    <loc>https://junior-richard.netlify.app/#about</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://portfolio2-2026.netlify.app//#projects</loc>
+    <loc>https://junior-richard.netlify.app/#projects</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://portfolio2-2026.netlify.app//#contact</loc>
+    <loc>https://junior-richard.netlify.app/#contact</loc>
     <priority>0.7</priority>
   </url>
 
