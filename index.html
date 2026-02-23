@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior M Richard Designer & Dev | 2026 Portfolio</title>
+    <title>Junior Rich — Web Developer & IT Specialist</title>
+    <meta name="description" content="Junior Richard is a web developer and IT specialist focused on secure, modern, and high-performance digital solutions. Portfolio, projects, and contact.">
+    <meta name="keywords" content="Junior Richard, web developer, portfolio, IT specialist, cybersecurity, front-end developer, Africa developer">
+    <meta name="robots" content="index, follow">
+
+
+    <meta property="og:title" content="Junior Munongo Richard — Web Developer & IT Specialist">
+    <meta property="og:description" content="Secure, modern, and high-performance web experiences. Explore my portfolio and projects.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/images/preview.jpg">
+    <link rel="canonical" href="https://yourdomain.com/">
+    
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #020617; color: white; overflow-x: hidden; cursor: none; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .neon-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+        .text-gradient { background: linear-gradient(to right, #60a5fa, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .blob { position: absolute; width: 400px; height: 400px; background: rgba(37, 99, 235, 0.2); filter: blur(80px); border-radius: 50%; z-index: -1; pointer-events: none; }
+        body.light { background: #f5f7fb; color: #020617; }
+        body.light .glass { background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.1); }
+        #cursor-dot, #cursor-outline { pointer-events: none; position: fixed; border-radius: 50%; z-index: 9999; }
+        #cursor-dot { width: 8px; height: 8px; background: #3b82f6; }
+        #cursor-outline { width: 40px; height: 40px; border: 1px solid rgba(59, 130, 246, 0.5); transition: transform 0.15s ease-out; }
+        .project-item { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Junior Rich",
+  "url": "https://yourdomain.com",
+  "jobTitle": "Web Developer & IT Specialist",
+  "sameAs": [
+    "https://github.com/Junior-M-Richard",
+    "https://linkedin.com/in/junior-m-richard"
+  ]
+}
+</script>
+</head>
+<body>
+
+    <div id="loader" class="fixed inset-0 bg-[#020617] flex items-center justify-center z-[9999]">
+        <div class="text-blue-500 text-2xl font-bold animate-pulse">Initializing Neural Link...</div>
+    </div>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+    <canvas id="particleCanvas" class="fixed inset-0 -z-20 opacity-40"></canvas>
+
+    <div class="blob top-[-10%] left-[-10%]"></div>
+    <div class="blob bottom-[10%] right-[-5%] bg-purple-900/20"></div>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
+        <div class="glass px-6 md:px-8 py-4 rounded-full flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter">Junior MR<span class="text-blue-500">.</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400 items-center">
+                <a href="#home" class="hover:text-blue-400 transition" data-en="Home"data-fr="Accueil">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition"data-en="About"data-fr="Apropos">About</a>
+                <a href="#projects" class="hover:text-blue-400 transition"data-en="Work"data-fr="Project">Work</a>
+                <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+                
+            </div>
+            <div class="flex items-center gap-4">
+                <button id="lang-toggle" class="glass px-3 py-1 rounded-lg text-xs font-bold border-blue-500/30 hover:border-blue-500 transition">FR / EN</button>
+                <button id="themeToggle" class="glass px-3 py-1 rounded-lg text-xs"><i class="fa fa-moon text-yellow-600"></i></button>
+                <button id="menuBtn" class="md:hidden text-white text-2xl">☰</button>
+                <button class="hidden md:block bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-full text-sm font-semibold transition neon-glow"><a href="#contact">Hire Me</a></button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="fixed top-0 right-0 h-full w-full md:w-80 glass p-10 transform translate-x-full transition-transform duration-500 z-[60] flex flex-col justify-between">
+        <div class="flex flex-col gap-8 mt-16 text-2xl font-bold">
+            <button onclick="closeMenu()" class="text-left text-gray-400 text-sm uppercase tracking-widest mb-4"data-en="✕ Close Menu" data-fr="✕ Ferme Menu">✕ Close Menu</button>
+            <a href="#home" onclick="closeMenu()" data-en="Home" data-fr="Accueil">Home</a>
+            <a href="#about" onclick="closeMenu()" data-en="About" data-fr="Apropos">About</a>
+            <a href="#projects" onclick="closeMenu()" data-en="Projects" data-fr="Projets">Projects</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+            
+        </div>
+        <div class="grid grid-cols-2 gap-4 border-t border-white/10 pt-8">
+            <a href="https://github.com/Junior-M-Richard" class="glass p-4 rounded-2xl text-center text-xs font-bold "><i class="fab fa-github text-black text-2xl hover:text-blue-400"></i></a>
+            <a href="https://www.linkedin.com/in/junior-m-richard-4a75102ab" class="glass p-4 rounded-2xl text-center text-xs font-bold"><i class="fab fa-linkedin text-blue-400 text-2xl hover:text-black"></i></a>
+            <a href="https://www.instagram.com/juniorm.richard?igsh=MXdqbzZpMmI3aDhueg==" class="glass p-4 rounded-2xl text-center text-xs font-bold"><i class="fab fa-instagram text-orange-500 text-2xl hover:text-orange-300"></i></a>
+            <a href="https://www.facebook.com/junior.m.richard" class="glass p-4 rounded-2xl text-center text-xs font-bold"><i class="fab fa-facebook text-blue-500 text-2xl hover:text-black"></i></a>
+        </div>
+    </div>
+
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20">
+        <div class="inline-block px-4 py-1.5 mb-6 glass rounded-full text-xs font-bold uppercase tracking-widest text-blue-400" data-en="Available for 2026 Projects" data-fr="Disponible pour Projets 2026">
+            Available for 2026 Projects
+        </div>
+        <h1 class="text-5xl md:text-8xl font-extrabold mb-6 tracking-tight">
+            Designer, IT & <br> <span class="text-gradient">Web Dev</span>
+        </h1>
+        <p class="max-w-2xl text-gray-400 text-lg md:text-xl mb-10 leading-relaxed" data-en="Explore more about Web, IT with me and meet premium works of Design"data-fr="Explotez beaucoup sur Web, IT avec moi et trouvez mes travaux de qualité de Design">
+            Explore more about <span class="text-white"> Web, IT</span> with me and meet <span class="text-white">premium works of Design</span>.
+        </p>
+        <div class="flex gap-4">
+            <a href="#projects" class="magnetic px-8 py-4 bg-white text-black font-bold rounded-xl hover:scale-105 transition duration-300" data-en="View Projects" data-fr="Voir le Projets">View Projects</a>
+            <a href="#contact" class="magnetic px-8 py-4 glass font-bold rounded-xl hover:bg-white/10 transition duration-300">Hire Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="relative group">
+                <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-[3rem] opacity-20 blur-2xl group-hover:opacity-40 transition duration-700"></div>
+                <div class="relative glass p-4 rounded-[3rem] border-white/10 overflow-hidden">
+                    <img src="/images/about1.png" 
+                         alt="Junior Rich" 
+                         class="rounded-[2.2rem] w-full h-[500px] object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+                <div class="absolute -bottom-6 -right-6 glass p-6 rounded-2xl border-blue-500/30 backdrop-blur-xl hidden md:block">
+                    <p class="text-3xl font-bold text-blue-500">3+</p>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-400 "data-en="Years of Experience" data-fr="Ans d'Experience"> Years of<br>Experience</p>
+                </div>
+            </div>
+
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-blue-500 font-bold tracking-widest uppercase text-sm mb-2" data-en="Who am I?" data-fr="Qui suis-je?">Who am I?</h2>
+                    <h3 class="text-4xl md:text-5xl font-extrabold" data-en="Build the Future of your Company" data-fr="Concevoir le futur de ton Entreprise">
+                        Build the Future <br> of your Company
+                    </h3>
+                </div>
+
+                <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
+                    <p data-en="I’m Junior Rich, a multidisciplinary web developer and IT enthusiast passionate about building secure and meaningful digital experiences.
+
+                                With a background in telecommunications and network security,
+                                 I combine strong technical foundations with modern design thinking. My work focuses on creating high-performance websites, intuitive interfaces, and secure digital solutions that solve real-world problems." 
+                       data-fr="Je suis Junior Rich, développeur web multidisciplinaire et passionné d’informatique, spécialisé dans la création d’expériences digitales sécurisées et utiles.
+
+                                Issu d’une formation en télécommunications et sécurité réseau, je combine des bases techniques solides avec une approche moderne du design. Mon travail consiste à développer des sites performants, des interfaces intuitives et des solutions digitales sécurisées qui répondent à de vrais besoins.">
+                        I’m Junior Rich, a multidisciplinary web developer and IT enthusiast passionate about building secure and meaningful digital experiences.
+
+                            With a background in telecommunications and network security,
+                         I combine strong technical foundations with modern design thinking. My work focuses on creating high-performance websites, intuitive interfaces, and secure digital solutions that solve real-world problems..
+                    </p>
+                    
+                    <p data-en="Beyond development, I have experience in teaching, mentoring, and technical support, which shaped my ability to communicate complex ideas clearly and work with diverse people.
+
+                                I believe technology should empower people. That’s why my mission is not only to build products, but to create solutions that inspire growth, innovation, and opportunity — especially for the next generation."
+                       data-fr="J’ai également une expérience dans l’enseignement et l’accompagnement technique, ce qui m’a permis d’apprendre à expliquer des concepts complexes de manière simple et à collaborer avec différents profils.
+
+                                    Je crois que la technologie doit être un levier d’opportunités. Ma mission est donc de créer des solutions qui favorisent la croissance, l’innovation et l’autonomie, en particulier pour les jeunes générations.">Beyond development, I have experience in teaching, mentoring, and technical support, which shaped my ability to communicate complex ideas clearly and work with diverse people.
+
+                                            I believe technology should empower people.
+                                         That’s why my mission is not only to build products, but to create solutions that inspire growth, innovation, and opportunity — especially for the next generation.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 glass rounded-full text-xs font-semibold border-white/5">Design Strategy</span>
+                    <span class="px-4 py-2 glass rounded-full text-xs font-semibold border-white/5">Web Dev</span>
+                    <span class="px-4 py-2 glass rounded-full text-xs font-semibold border-white/5">Information Technology</span>
+                    <span class="px-4 py-2 glass rounded-full text-xs font-semibold border-white/5">GSAP Animation</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="py-24 px-6 max-w-7xl mx-auto border-t border-white/5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            
+            <div class="space-y-12">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6" data-en="Technical Arsenal" data-fr="Arsenal Technique">Technical Arsenal</h2>
+                    
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-semibold tracking-wider">WEB DEV</span>
+                            <span class="text-blue-500 text-sm">95%</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-blue-500 neon-glow" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-semibold tracking-wider">IT</span>
+                            <span class="text-purple-500 text-sm">90%</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-purple-500" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-sm font-semibold tracking-wider">DESIGN</span>
+                            <span class="text-cyan-400 text-sm">85%</span>
+                        </div>
+                        <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                            <div class="h-full bg-cyan-400" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="glass p-8 rounded-3xl border-white/5">
+                    <h3 class="text-xl font-bold mb-4">Milestones</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <div class="text-sm"><span class="text-white font-bold">2024 - 2026:</span> Senior UI Architect @ NexaGen</div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <div class="w-2 h-2 rounded-full bg-purple-500"></div>
+                            <div class="text-sm"><span class="text-white font-bold">2022 - 2024:</span> Full-Stack Developer @ CyberGuard</div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="glass p-8 rounded-[3rem] border-white/5 flex flex-col justify-center items-center text-center">
+                <p class="text-gray-400 text-xs uppercase tracking-widest mb-6">Neural System Architecture</p>
+                
+                <p class="mt-6 text-sm text-gray-400 italic">"I build systems where aesthetics never compromise security."</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+            <div>
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-4" data-en="Work Album" data-fr="Album de Projets">Work Album</h2>
+                <p class="text-gray-400" data-en="Premium interfaces and secure code architectures." data-fr="interface influide et Architecture du code sécurisé">Premium interfaces and secure code architectures.</p>
+            </div>
+            <div class="flex gap-2 glass p-1.5 rounded-2xl">
+                <button class="filter-btn active bg-blue-600 px-4 py-2 rounded-xl text-xs font-bold" onclick="filterProjects('all')">All</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold hover:bg-white/5" onclick="filterProjects('it')">IT</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold hover:bg-white/5" onclick="filterProjects('design')">Design</button>
+                <button class="filter-btn px-4 py-2 rounded-xl text-xs font-bold hover:bg-white/5" onclick="filterProjects('dev')">Dev</button>
+            </div>
+        </div>
+
+        <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+            <div class="project-item group" data-category="it">
+                <div class="relative z-10 glass rounded-[2.5rem] p-6 overflow-hidden border-white/5 group-hover:border-blue-500/30 transition-all duration-700">
+                    <div class="relative overflow-hidden rounded-[1.5rem] h-[400px]">
+                        <img src="/images/it1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <!-- <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-blue-600 transition">LINK</a>
+                            <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-blue-600 transition">CODE</a> -->
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold">StarLink Dash</h3>
+                        <p class="text-blue-400 text-sm font-medium">IT • Technology • 2025</p>
+                    </div>
+                </div>
+                <div class="relative z-10 glass rounded-[2.5rem] p-6 overflow-hidden border-white/5 group-hover:border-blue-500/30 transition-all duration-700">
+                    <div class="relative overflow-hidden rounded-[1.5rem] h-[400px]">
+                        <img src="/images/it2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <!-- <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-blue-600 transition">LINK</a>
+                            <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-blue-600 transition">CODE</a> -->
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold">Fixing the StarLink </h3>
+                        <p class="text-blue-400 text-sm font-medium">Telecom • Network • 2025</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="project-item group" data-category="design">
+
+                <div class="relative z-10 glass rounded-[2.5rem] p-6 overflow-hidden border-white/5 group-hover:border-blue-500/30 transition-all duration-700">
+                    <div class="relative overflow-hidden rounded-[1.5rem] h-[400px]">
+                        <img src="/images/design1.png" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <!-- <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-blue-600 transition">LINK</a> -->
+                            <!-- <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-blue-600 transition">CODE</a> -->
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold">EATECH's Poster</h3>
+                        <p class="text-blue-400 text-sm font-medium">UI/UX • Design • 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-item group" data-category="dev">
+                <div class="relative z-10 glass rounded-[2.5rem] p-6 overflow-hidden border-white/5 group-hover:border-purple-500/30 transition-all duration-700">
+                    <div class="relative overflow-hidden rounded-[1.5rem] h-[400px]">
+                        <img src="/images/dev1.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
+                            <!-- <a href="#" class="w-14 h-14 glass rounded-full flex items-center justify-center hover:bg-purple-600 transition">DEMO</a> -->
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-2xl font-bold">Coding </h3>
+                        <p class="text-purple-400 text-sm font-medium">Full-Stack • Security • 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
+    <div class="glass p-10 md:p-16 rounded-[3rem] border-white/10">
+        <h2 class="text-4xl font-bold mb-4">Initialize Contact</h2>
+        <p class="text-gray-400 mb-8" data-en="Ready to build your next vision?"data-fr="Pret pour construire votre vision ?">Ready to build your next vision?</p>
+        
+        <a href="mailto:juniormunongorichard@gmail.com" 
+           class="magnetic inline-flex items-center gap-3 px-12 py-5 bg-blue-600 text-white rounded-2xl font-bold hover:neon-glow transition group">
+            <i class="fa-solid fa-envelope text-xl group-hover:scale-110 transition"></i>
+            <span>Send Message</span>
+        </a>
+    </div>
+</section>
+    <footer class="py-12 text-center text-gray-500 text-xs">
+        &copy; 2026 Junior Rich | Web Dev | IT and Designer
+    </footer>
+
+ <script src="script.js"></script>   
+</body>
+</html>
